@@ -1,16 +1,21 @@
+
+***
+
 # eBay Price Tracker
 
 A simple Python script that searches eBay for products using the **eBay Browse API** and saves the results to a CSV file.
 
 ## Features
-- Search for products on eBay (Sandbox or Production).
-- Filter results by minimum and maximum price.
-- Save results (title, price, currency, link) into a timestamped CSV file.
-- Shows a preview of the first 5 results in the terminal.
+
+- Search for products on eBay (Sandbox or Production environment)
+- Filter results by minimum and maximum price
+- Save results (title, price, currency, link) into a timestamped CSV file
+- Displays a preview of the first 5 results directly in the terminal
 
 ## Requirements
-- Python 3.8+
-- eBay Developer Account (Sandbox or Production App Keys)
+
+- Python 3.8 or higher
+- eBay Developer Account with app keys (Sandbox or Production)
 
 ## Installation
 
@@ -19,25 +24,29 @@ A simple Python script that searches eBay for products using the **eBay Browse A
    ```bash
    git clone https://github.com/yourusername/Best_Ebay_Prices.git
    cd Best_Ebay_Prices
-````
+   ```
 
-2. Create a virtual environment and install dependencies:
+2. Create and activate a virtual environment:
 
    ```bash
    python3 -m venv .venv
-   source .venv/bin/activate   # Linux/macOS
-   .venv\Scripts\activate      # Windows
+   source .venv/bin/activate     # Linux/macOS
+   .venv\Scripts\activate        # Windows
+   ```
 
+3. Install the required packages:
+
+   ```bash
    pip install -r requirements.txt
    ```
 
-3. Create a `requirements.txt` with the following:
+4. Prepare `requirements.txt` with this content:
 
    ```
    requests
    ```
 
-4. Open the script `Ebay.py` and replace the placeholders:
+5. Open the script `Ebay.py` and replace the placeholder API credentials:
 
    ```python
    CLIENT_ID     = "YOUR_CLIENT_ID"
@@ -52,7 +61,7 @@ Run the script:
 python Ebay.py
 ```
 
-Example run:
+Sample interaction:
 
 ```
 Enter product keyword (e.g. 'xiaomi 14'): iphone 16 pro max
@@ -66,34 +75,35 @@ Saved results to ebay_results_20250913_153055.csv
 ...
 ```
 
-The results are saved to a CSV file named like:
+The search results are saved to a CSV file named like:
 
 ```
-ebay_results_20250913_153055.csv
+ebay_results_YYYYMMDD_HHMMSS.csv
 ```
 
-with the following format:
+with columns:
 
-| Title       | Price  | Currency | Link         |
-| ----------- | ------ | -------- | ------------ |
-| iPhone Test | 499.99 | USD      | https\://... |
+| Title        | Price  | Currency | Link                      |
+|--------------|--------|----------|---------------------------|
+| iPhone Test  | 499.99 | USD      | https://sandbox.ebay.com/... |
 
 ## Sandbox vs Production
 
-* **Sandbox**: For testing with fake listings.
-  Token & API calls use `https://api.sandbox.ebay.com/...`.
+- **Sandbox:** For testing with fake listings.  
+  - API base URL: `https://api.sandbox.ebay.com/`  
+  - Use Sandbox app keys  
+- **Production:** For real listings.  
+  - API base URL: `https://api.ebay.com/`  
+  - Use Production app keys from your eBay Developer Dashboard  
 
-* **Production**: For real eBay listings.
-  Requires Production App Keys from the eBay Developer Dashboard.
-  Token & API calls use `https://api.ebay.com/...`.
+You can switch between Sandbox and Production by changing the following in `Ebay.py`:
 
-Switch between Sandbox and Production by updating:
-
-* `BASE_URL` in the script
-* `CLIENT_ID` and `CLIENT_SECRET` values
+- `BASE_URL`  
+- `CLIENT_ID` and `CLIENT_SECRET`
 
 ## License
 
-MIT
+This project is licensed under the [MIT License](LICENSE).
 
+***
 
