@@ -22,7 +22,7 @@ A simple Python script that searches eBay for products using the **eBay Browse A
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/Best_Ebay_Prices.git
+   git clone https://github.com/VasilisKokotakis/Best_Ebay_Prices.git
    cd Best_Ebay_Prices
    ```
 
