@@ -103,7 +103,5 @@ You can switch between Sandbox and Production by changing the following in `Ebay
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
-***
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
